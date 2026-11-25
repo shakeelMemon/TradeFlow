@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TradeFlow.Contracts\TradeFlow.Contracts.csproj" />
+    <ProjectReference Include="..\TradeFlow.Messaging\TradeFlow.Messaging.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\tradeflow.shared.json" Link="tradeflow.shared.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

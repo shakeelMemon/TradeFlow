@@ -1,0 +1,12 @@
+bin/
+obj/
+.vs/
+*.user
+*.db
+*.db-shm
+*.db-wal
+TestResults/
+appsettings.Development.json
+
+docs/TradeFlow_System_Guide.pdf
+docs/TradeFlow_Migration_Map.pdf

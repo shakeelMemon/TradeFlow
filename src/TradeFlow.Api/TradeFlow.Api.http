@@ -1,0 +1,56 @@
+@api = http://localhost:5080
+
+### Valid bond order (expect 202 Accepted)
+POST {{api}}/api/orders
+Content-Type: application/json
+X-Correlation-ID: demo-001
+
+{
+  "clientOrderId": "MANUAL-0001",
+  "sourceSystem": "Calypso",
+  "messageType": "Order",
+  "instrumentId": "CAN-2.75-2035",
+  "side": "Buy",
+  "quantity": 5000000,
+  "price": 97.45,
+  "currency": "CAD",
+  "portfolio": "CAD-FI-CORE",
+  "tradeTime": "2026-10-14T14:30:00Z"
+}
+
+### Same order again (expect 200, same OrderId: idempotent)
+POST {{api}}/api/orders
+Content-Type: application/json
+
+{
+  "clientOrderId": "MANUAL-0001",
+  "sourceSystem": "Calypso",
+  "messageType": "Order",
+  "instrumentId": "CAN-2.75-2035",
+  "side": "Buy",
+  "quantity": 5000000,
+  "price": 97.45,
+  "currency": "CAD",
+  "portfolio": "CAD-FI-CORE",
+  "tradeTime": "2026-10-14T14:30:00Z"
+}
+
+### Fat-finger price (expect 422)
+POST {{api}}/api/orders
+Content-Type: application/json
+
+{
+  "clientOrderId": "MANUAL-0002",
+  "sourceSystem": "Calypso",
+  "messageType": "Order",
+  "instrumentId": "RY.TO",
+  "side": "Sell",
+  "quantity": 1000,
+  "price": 265.00,
+  "currency": "CAD",
+  "portfolio": "CAD-EQ-ACTIVE",
+  "tradeTime": "2026-10-14T14:30:00Z"
+}
+
+### Reconciliation
+GET {{api}}/api/reconciliation

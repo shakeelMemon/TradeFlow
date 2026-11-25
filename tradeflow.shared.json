@@ -1,0 +1,28 @@
+{
+  "Legacy": {
+    "Transport": "Msmq",
+    "CalypsoOutQueue": "tradeflow.calypso.out",
+    "SimCorpInQueue": "tradeflow.simcorp.in",
+    "DeadLetterQueue": "tradeflow.deadletter"
+  },
+  "Messaging": {
+    "Provider": "AzureServiceBus",
+    "LocalFile": {
+      "Topic": "trade-orders",
+      "Subscriptions": "simcorp,fix-gateway"
+    },
+    "AzureServiceBus": {
+      "FullyQualifiedNamespace": "sb-wealthhub-dev-zmnpq.servicebus.windows.net",
+      "Topic": "trade-orders",
+      "Subscription": "simcorp"
+    },
+    "Aws": {
+      "Region": "ca-central-1",
+      "TopicArn": "",
+      "QueueUrl": ""
+    }
+  },
+  "Routing": {
+    "OrdersViaFix": true
+  }
+}

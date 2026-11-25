@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <!-- Port of System.Messaging (MSMQ) for modern .NET. Windows only at runtime. -->
+    <PackageReference Include="MSMQ.Messaging" Version="1.*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TradeFlow.Contracts\TradeFlow.Contracts.csproj" />
+  </ItemGroup>
+</Project>

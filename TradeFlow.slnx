@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TradeFlow.Contracts/TradeFlow.Contracts.csproj" />
+    <Project Path="src/TradeFlow.Legacy/TradeFlow.Legacy.csproj" />
+    <Project Path="src/TradeFlow.Messaging/TradeFlow.Messaging.csproj" />
+    <Project Path="src/TradeFlow.Api/TradeFlow.Api.csproj" />
+    <Project Path="src/TradeFlow.Bridge/TradeFlow.Bridge.csproj" />
+    <Project Path="src/TradeFlow.CalypsoSimulator/TradeFlow.CalypsoSimulator.csproj" />
+    <Project Path="src/TradeFlow.SimCorpSimulator/TradeFlow.SimCorpSimulator.csproj" />
+    <Project Path="src/TradeFlow.Fix/TradeFlow.Fix.csproj" />
+    <Project Path="src/TradeFlow.FixGateway/TradeFlow.FixGateway.csproj" />
+    <Project Path="src/TradeFlow.BrokerSimulator/TradeFlow.BrokerSimulator.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TradeFlow.Tests/TradeFlow.Tests.csproj" />
+  </Folder>
+</Solution>
